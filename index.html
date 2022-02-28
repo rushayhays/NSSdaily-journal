@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Captain's Log</title>
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+  <header>
+    <div class="logo">
+        <h2>Logo goes here</h2>
+    </div>
+    <div class="username">
+        <h2>Username and user number or something</h2>
+    </div>
+  </header>
+  <main>
+      <div class="journalBox">
+
+          <div class="journalEntryBox">
+                <div class="journalHeader">
+                    <div class="dateBox">
+                        <form action="">   
+                            <fieldset>
+                                <label for="journalDate">Today's Date</label>
+                                <input type="date" name="journalDate" id="journalDate"><input>
+                            </fieldset>
+                        </form>
+                        <!-- <p>date</p> -->
+                    </div>
+                    <div class="moodBox">
+                        <form action="">   
+                            <fieldset>
+                                <label for="moodButton">Mood</label>
+                                <select id="moodButton" name="moodButton">
+                                    <option value="intrpid">Intrepid</option>
+                                    <option value="daring">Daring</option>
+                                    <option value="bold">Bold</option>
+                                    <option value="marvelous">Marvelous</option>
+                                </select>
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+                <div class="journalMain">
+                    <div class="inputBox">
+                        <label for="fname">Subject:</label>
+                        <input type="text" id="fname" name="fname">
+                        <!-- <p>input field here</p> -->
+                    </div>
+                    <div class="textAreaBox">
+                        <textarea name="message" rows="10" cols="30">My daring adventures in space. Space the final frontier...
+                            </textarea>
+                        <!-- <p>text area field here</p> -->
+                    </div>
+    
+                </div>
+                <div class="journalFooter">
+                    <button type="button" >Record Journal Entry</button>
+                </div>
+          </div>
+          
+          <div class="journalListBox">
+                <div class="listTitle">
+                    <h4>Previous Entries</h4>
+                </div>
+                <div class="entryList">
+                    <div class="journalEntry">
+                        <div class="entryName"><h5>Journal Entry Number</h5></div>
+                        <div class="editBtn"><button type="button" >Edit</button></div>
+                        <div class="deleteBtn"><button type="button" >Delete</button>></div>
+                    </div>
+                    <div class="journalEntry">
+                        <div class="entryName"><h5>Journal Entry Number</h5></div>
+                        <div class="editBtn"><button type="button" >Edit</button></div>
+                        <div class="deleteBtn"><button type="button" >Delete</button>></div>
+                    </div>
+                    <div class="journalEntry">
+                        <div class="entryName"><h5>Journal Entry Number</h5></div>
+                        <div class="editBtn"><button type="button" >Edit</button></div>
+                        <div class="deleteBtn"><button type="button" >Delete</button>></div>
+                    </div>
+                </div>
+            </div>
+      </div>
+        <div class="sideGraphicBox">
+            <p>This is where</p>
+            <p>The cool graphic</p>
+            <p>on the side of</p>
+            <p>the page goes</p>
+        </div>
+  </main>  
+  <footer>
+      <div>
+          <p>copyright stuff</p>
+        </div>
+        <div>
+            <p>This page was made by Rushay</p>
+        </div>
+        <div>
+            <p>Check out my Git hub</p>
+        </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,96 @@
+
+/*This is the first big box to apply flexbox to
+It will affect Header, Main and Footer*/
+body {
+
+}
+
+/*This is nested in body*/
+header {
+
+}
+
+.logo {
+    background-color: lavender;
+}
+
+.username {
+    background-color: lavender;
+}
+
+/*This is the next big box, it will affect journalBox and sideGraphicBox*/
+main {
+    border:solid red 2px;
+    display: flex;
+}
+
+/*These are inside main*/
+.journalBox {
+ border: solid blue 2px;
+ flex:3;
+}
+
+
+.sideGraphicBox {
+    border: blue solid 2px;
+    flex:1;
+}
+
+/*These are nested inside journalBox -->journalEntryBox journalListBox*/
+.journalEntryBox {
+    border: green solid 2px;
+}
+
+/*This is nested in journal entry box*/
+.journalHeader {
+    display:flex;
+    flex-direction: row;
+    background-color: aqua;
+    
+}
+.journalMain {
+    display:flex;
+    flex-direction: column;
+}
+.journalFooter {
+    background-color: aqua;
+}
+/*End of items nested in journalEntry*/
+
+/*This is nested inside journalHeader, the date and mood buttons*/
+
+.dateBox {
+    background-color: blue;
+    color: white;
+    margin-right: 5px;
+}
+
+.moodBox {
+    background-color: blue;
+    color: white;
+    margin-right: 5px;
+}
+
+/*This is inside journal box*/
+.journalListBox{
+    border:green solid 2px;
+}
+
+/*This is everything nested in journalListBox*/
+.listTitle {
+    background-color: aquamarine;
+}
+.journalEntry {
+    background-color: aquamarine;
+    display:flex;
+    justify-content: space-between;
+    margin: 5px 0;
+}
+/*End of items nested in journalListBox*/
+
+/*This is a big box nested in body*/
+footer {
+    display: flex;
+    justify-content: space-between;
+    background-color: lavender;
+}
