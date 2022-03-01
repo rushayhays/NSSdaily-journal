@@ -83,8 +83,21 @@ main {
 .journalEntry {
     background-color: aquamarine;
     display:flex;
-    justify-content: space-between;
+    flex-direction: column;
+    /* justify-content: space-between; */
     margin: 5px 0;
+}
+
+.journalButtons {
+    display:flex;
+
+}
+
+.editBtn {
+    margin-right: 5px;;
+}
+.deletBtn {
+    margin-right: 5px;
 }
 /*End of items nested in journalListBox*/
 
