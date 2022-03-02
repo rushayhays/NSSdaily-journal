@@ -72,6 +72,14 @@ main {
 }
 
 /*This is inside journal box*/
+.journalMain {
+    padding:.25em;
+}
+
+.inputBox {
+    margin-bottom: .25em;
+}
+
 .journalListBox{
     border:green solid 2px;
 }
