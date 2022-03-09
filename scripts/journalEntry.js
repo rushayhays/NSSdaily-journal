@@ -9,7 +9,7 @@ export const JournalEntryComponent = (entry) => {
             <div><p>${entry.entry}</p></div>
             <div class="journalButtons">
                 <div class="editBtn"><button type="button" >Edit</button></div>
-                <div class="deleteBtn"><button type="button" >Delete</button>></div>
+                <div class="deleteBtn"><button type="button" >Delete</button></div>
             </div>
         </section>
     `
