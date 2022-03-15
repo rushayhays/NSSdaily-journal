@@ -2,7 +2,10 @@
 /*This is the first big box to apply flexbox to
 It will affect Header, Main and Footer*/
 body {
-
+    background-image: url("/images/spaceBack.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    
 }
 
 /*This is nested in body*/
@@ -11,22 +14,24 @@ header {
 }
 
 .logo {
-    background-color: lavender;
+    /* background-color: lavender; */
+    color:white;
 }
 
 .username {
-    background-color: lavender;
+    /* background-color: lavender; */
+    color: white;
 }
 
 /*This is the next big box, it will affect journalBox and sideGraphicBox*/
 main {
-    border:solid red 2px;
+    border:solid lightskyblue 2px;
     display: flex;
 }
 
 /*These are inside main*/
 .journalBox {
- border: solid blue 2px;
+ /* border: solid blue 2px; */
  flex:3;
 }
 
@@ -38,14 +43,14 @@ main {
 
 /*These are nested inside journalBox -->journalEntryBox journalListBox*/
 .journalEntryBox {
-    border: green solid 2px;
+    border: lightskyblue solid 2px;
 }
 
 /*This is nested in journal entry box*/
 .journalHeader {
     display:flex;
     flex-direction: row;
-    background-color: aqua;
+    /* background-color: aqua; */
     
 }
 .journalMain {
@@ -53,14 +58,14 @@ main {
     flex-direction: column;
 }
 .journalFooter {
-    background-color: aqua;
+    /* background-color: aqua; */
 }
 /*End of items nested in journalEntry*/
 
 /*This is nested inside journalHeader, the date and mood buttons*/
 
 .dateBox {
-    background-color: blue;
+    /* background-color: blue; */
     color: white;
     margin-right: 5px;
 }
@@ -72,6 +77,14 @@ main {
 }
 
 /*This is inside journal box*/
+.journalMain {
+    padding:.25em;
+}
+
+.inputBox {
+    margin-bottom: .25em;
+}
+
 .journalListBox{
     border:green solid 2px;
 }
@@ -81,7 +94,9 @@ main {
     background-color: aquamarine;
 }
 .journalEntry {
-    background-color: aquamarine;
+    /* background-color: aquamarine; */
+    border:1px solid lightskyblue;
+    color: white;
     display:flex;
     flex-direction: column;
     /* justify-content: space-between; */
