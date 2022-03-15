@@ -2,9 +2,10 @@
 /*This is the first big box to apply flexbox to
 It will affect Header, Main and Footer*/
 body {
-    background-image: url("/spaceBack.jpg");
+    background-image: url("/images/spaceBack.jpg");
     background-repeat: no-repeat;
     background-size: cover;
+    
 }
 
 /*This is nested in body*/

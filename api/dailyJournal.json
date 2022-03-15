@@ -1,0 +1,32 @@
+{
+    "users":[
+        {
+            "name": "Rushay",
+            "email": "rushayhays@email.com",
+            "id": 1
+        }
+    ],
+    "posts":[
+        {
+            "id": 1,
+            "date": "02/25/2022",
+            "concept": "HTML & CSS",
+            "entry": "We talked about HTML components and how to make grid layouts with Flexbox in CSS.",
+           " mood": "Intrepid"
+        },
+        {
+            "id": 2,
+            "date": "02/28/2022",
+           "concept": "Objects to HTML",
+            "entry": "More work on Martn's aquarium, turning objects into HTML elemnets.",
+           "mood": "Bold"
+        },
+        {
+            "id": 3,
+            "date": "03/01/2022",
+            "concept": "Fat Tuesday",
+            "entry": "We made a mock-up madrigras page with a countdown timer.",
+           " mood": "Adventurous"
+        }
+    ]
+}
