@@ -15,9 +15,3 @@ export const JournalEntryComponent = (entry) => {
     `
 }
 
-
-{/* <div class="journalEntry">
-    <div class="entryName"><h5>Journal Entry Number</h5></div>
-    <div class="editBtn"><button type="button" >Edit</button></div>
-    <div class="deleteBtn"><button type="button" >Delete</button>></div>
-</div> */}

@@ -2,9 +2,14 @@
 /*This is the first big box to apply flexbox to
 It will affect Header, Main and Footer*/
 body {
-    background-image: url("/images/spaceBack.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
+    background-image: url("/images/interfaceSapce.png");
+    /* background-repeat: no-repeat;
+    background-size: cover; */
+    font-family: 'Courier New', monospace;
+    color:aquamarine;
+    /* 1 pixel black shadow to left, top, right and bottom */
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    
     
 }
 
@@ -15,12 +20,11 @@ header {
 
 .logo {
     /* background-color: lavender; */
-    color:white;
 }
 
 .username {
     /* background-color: lavender; */
-    color: white;
+    
 }
 
 /*This is the next big box, it will affect journalBox and sideGraphicBox*/
@@ -66,13 +70,11 @@ main {
 
 .dateBox {
     /* background-color: blue; */
-    color: white;
+    
     margin-right: 5px;
 }
 
 .moodBox {
-    background-color: blue;
-    color: white;
     margin-right: 5px;
 }
 
@@ -83,10 +85,11 @@ main {
 
 .inputBox {
     margin-bottom: .25em;
+    
 }
 
 .journalListBox{
-    border:green solid 2px;
+    
 }
 
 /*This is everything nested in journalListBox*/
@@ -96,7 +99,7 @@ main {
 .journalEntry {
     /* background-color: aquamarine; */
     border:1px solid lightskyblue;
-    color: white;
+    
     display:flex;
     flex-direction: column;
     /* justify-content: space-between; */
@@ -114,11 +117,20 @@ main {
 .deletBtn {
     margin-right: 5px;
 }
-/*End of items nested in journalListBox*/
+/*End of items nested in journa
+lListBox*/
 
 /*This is a big box nested in body*/
 footer {
     display: flex;
     justify-content: space-between;
     background-color: lavender;
+}
+
+#journalDate
+input {
+    background-color:lightgray ;
+}
+textarea {
+    background:lightgray ;
 }

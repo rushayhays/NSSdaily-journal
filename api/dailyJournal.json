@@ -27,6 +27,13 @@
             "concept": "Fat Tuesday",
             "entry": "We made a mock-up madrigras page with a countdown timer.",
            " mood": "Adventurous"
+        },
+        {
+            "id": 4,
+            "date": "03/16/2022",
+            "concept": "APIs",
+            "entry": "Today, we're figuring out how to disply API retrieved info to the DOM",
+           " mood": "Adventurous"
         }
     ]
 }
