@@ -8,8 +8,8 @@ export const JournalEntryComponent = (entry) => {
             <div class="entryName"><h5><p>Date:${entry.date}</p></h5></div>
             <div><p>${entry.entry}</p></div>
             <div class="journalButtons">
-                <div class="editBtn"><button type="button" >Edit</button></div>
-                <div class="deleteBtn"><button type="button" >Delete</button></div>
+                <div class="editBtn"><button id="edit--${entry.id}" type="button" >Edit</button></div>
+                <div class="deleteBtn"><button id="delete--${entry.id}" type="button" >Delete</button></div>
             </div>
         </section>
     `
