@@ -54,6 +54,7 @@ main {
 .journalHeader {
     display:flex;
     flex-direction: row;
+    margin-bottom: 1em;
     /* background-color: aqua; */
     
 }
@@ -89,12 +90,12 @@ main {
 }
 
 .journalListBox{
-    
+    margin-top: 5em;
 }
 
 /*This is everything nested in journalListBox*/
 .listTitle {
-    background-color: aquamarine;
+   
 }
 .journalEntry {
     /* background-color: aquamarine; */
@@ -127,10 +128,25 @@ footer {
     background-color: lavender;
 }
 
-#journalDate
+
 input {
-    background-color:lightgray ;
+    background: rgba(84, 174, 248, 0.747);;
 }
-textarea {
-    background:lightgray ;
+
+
+#moodButton {
+    background: rgba(84, 174, 248, 0.747);
+}
+
+#journalDate{
+    background: rgba(84, 174, 248, 0.747);
+}
+
+#textareaID {
+    background: rgba(84, 174, 248, 0.747);
+    width:95%;
+    color:aquamarine;
+    /* 1 pixel black shadow to left, top, right and bottom */
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    
 }

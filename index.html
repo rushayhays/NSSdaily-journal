@@ -7,7 +7,7 @@
     <title>Captain's Log</title>
     <link rel="stylesheet" href="styles/main.css">
 </head>
-<body>
+<body class="daily-journal">
   <header>
     <div class="logo">
         <h2>Logo goes here</h2>
@@ -35,7 +35,7 @@
                             <fieldset>
                                 <label for="moodButton">Mood</label>
                                 <select id="moodButton" name="moodButton">
-                                    <option value="intrpid">Intrepid</option>
+                                    <option value="intrepid">Intrepid</option>
                                     <option value="daring">Daring</option>
                                     <option value="bold">Bold</option>
                                     <option value="marvelous">Marvelous</option>
@@ -46,25 +46,25 @@
                 </div>
                 <div class="journalMain">
                     <div class="inputBox">
-                        <label for="fname">Subject:</label>
-                        <input type="text" id="fname" name="fname">
+                        <label for="subject">Subject:</label>
+                        <input type="text" id="subject" name="subject">
                         <!-- <p>input field here</p> -->
                     </div>
                     <div class="textAreaBox">
-                        <textarea name="message" rows="10" cols="30">My daring adventures in space. Space the final frontier...
+                        <textarea id="textareaID" name="message" rows="10" cols="30">My daring adventures in space. Space the final frontier...
                             </textarea>
                         <!-- <p>text area field here</p> -->
                     </div>
     
                 </div>
                 <div class="journalFooter">
-                    <button type="button" >Record Journal Entry</button>
+                    <button id="record" type="button" >Record Journal Entry</button>
                 </div>
           </div>
           
           <div class="journalListBox">
                 <div class="listTitle">
-                    <h4>Previous Entries</h4>
+                    <h3>Previous Entries</h3>
                 </div>
                 <div class="entryList">
                    <!-- This is where JS inserts the journal Entries -->
@@ -76,7 +76,7 @@
             <p>The cool graphic</p>
             <p>on the side of</p>
             <p>the page goes</p>
-            </section>
+            <image src="" alt="scifi logo"></image>
         </div>
   </main>  
   <footer>
