@@ -130,16 +130,16 @@ footer {
 
 
 input {
-    background-color:lightgray ;
+    background: rgba(84, 174, 248, 0.747);;
 }
 
 
 #moodButton {
-    background: lightgray;
+    background: rgba(84, 174, 248, 0.747);
 }
 
 #journalDate{
-    background: lightgray;
+    background: rgba(84, 174, 248, 0.747);
 }
 
 #textareaID {
