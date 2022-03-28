@@ -1,12 +1,20 @@
-// For Postertiy
+//this will create an area for modifying journal entries
 
-`<div class="journalEntryBox">
-<div class="journalHeader">
+
+// "date": "2022-03-28",
+// "concept": "Test",
+// "entry": "The first Test",
+// "mood": "bold",
+// "id": 5
+
+export const JournalEditField = (postObj) => {
+    return`
+    <div class="journalHeader">
     <div class="dateBox">
         <form action="">
             <fieldset>
                 <label for="journalDate">Today's Date</label>
-                <input type="date" name="journalDate" id="journalDate"></input>
+                <input type="date" name="journalDate" id="journalDate" value="${postObj.date}"></input>
             </fieldset>
         </form>
         <!-- <p>date</p> -->
@@ -15,7 +23,7 @@
         <form action="">   
             <fieldset>
                 <label for="moodButton">Mood</label>
-                <select id="moodButton" name="moodButton">
+                <select id="moodButton" name="moodButton" value="${postObj.mood}">
                     <option value="intrepid">Intrepid</option>
                     <option value="daring">Daring</option>
                     <option value="bold">Bold</option>
@@ -28,17 +36,19 @@
 <div class="journalMain">
     <div class="inputBox">
         <label for="subject">Subject:</label>
-        <input type="text" id="subject" name="subject">
-        <!-- <p>input field here</p> -->
+        <input type="text" id="subject" name="subject" value="${postObj.concept}">
     </div>
     <div class="textAreaBox">
-        <textarea id="textareaID" name="message" rows="10" cols="30">My daring adventures in space. Space the final frontier...
-            </textarea>
-        <!-- <p>text area field here</p> -->
+        <textarea id="textareaID" name="message" rows="10" cols="30" placeholder="My daring adventures in space. Space the final frontier...">
+            ${postObj.entry}
+        </textarea>
     </div>
 
 </div>
 <div class="journalFooter">
-    <button id="record" type="button" >Record Journal Entry</button>
+    <button id="updatePost__${postObj.id}" type="button">Update</button>
+    <button id="newPost__cancel">Cancel</button>
 </div>
-</div>`
+`
+
+}

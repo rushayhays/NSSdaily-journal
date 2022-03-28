@@ -1,6 +1,7 @@
 import { EntryList } from "./journalEntryList.js";
-import { getLoggedInUser, getPosts } from "./data/dataManager.js";
+import { getLoggedInUser, getPosts, getSinglePost, updatePost } from "./data/dataManager.js";
 import { createPost, deletePost } from "./data/dataManager.js";
+import { JournalEditField } from "./journalEdit.js"
 
 // EntryList();
 console.log(getLoggedInUser());
@@ -53,7 +54,6 @@ let journalEntryInProgress = {
 applicationElement.addEventListener("change", (event) => {
 	
 	if (event.target.id === "journalDate"){
-		console.log(event.target.value)
 		journalEntryInProgress.date = event.target.value;
 	}
 })
@@ -62,7 +62,6 @@ applicationElement.addEventListener("change", (event) => {
 applicationElement.addEventListener("change", (event) => {
 	
 	if (event.target.id === "moodButton"){
-		console.log(event.target.value)
 		journalEntryInProgress.mood=event.target.value;
 	}
 })
@@ -71,15 +70,14 @@ applicationElement.addEventListener("change", (event) => {
 applicationElement.addEventListener("keyup", (event) => {
 	
 	if (event.target.id === "textareaID"){
-		console.log(event.target.value)
 		journalEntryInProgress.entry = event.target.value
 	}
 })
 
+//This updates the subject
 applicationElement.addEventListener("keyup", (event) => {
 	
 	if (event.target.id === "subject"){
-		console.log(event.target.value)
 		journalEntryInProgress.concept = event.target.value;
 	}
 })
@@ -96,16 +94,17 @@ const clearJournalEntryArea = () => {
 	dateArea.value = "";
 }
 
-//This notes if thr record button was pushed
+//Record button, posts a new entry to the local database and reloads the entry list
 applicationElement.addEventListener("click", (event) => {
 	
 	if (event.target.id === "record"){
-		console.log("Recorded")
 		createPost(journalEntryInProgress).then(showPostList)
 		clearJournalEntryArea()
 	}
 })
 
+
+//This allows you to delete a Post
 applicationElement.addEventListener("click", event => {
 	event.preventDefault();
 	if (event.target.id.startsWith("delete")) {
@@ -115,4 +114,50 @@ applicationElement.addEventListener("click", event => {
 		  showPostList();
 		})
 	}
-  })
+})
+
+//This controls the edit features
+const showEdit = (postObj) => {
+	const entryElement = document.querySelector(".journalEntryBox");
+	entryElement.innerHTML = JournalEditField(postObj);
+}
+applicationElement.addEventListener("click", event => {
+	event.preventDefault();
+	if (event.target.id.startsWith("edit")) {
+	  const postId = event.target.id.split("--")[1];
+	  getSinglePost(postId)
+		.then(response => {
+		  showEdit(response);
+		})
+	}
+})
+
+
+//This area grabs the info entered into the DOM, shoves it into an object and uses that
+//object to update the database
+applicationElement.addEventListener("click", event => {
+	event.preventDefault();
+	if (event.target.id.startsWith("updatePost")) {
+	  const postId = event.target.id.split("__")[1];
+	  //collect all the details into an object
+	  const date = document.querySelector("#journalDate").value
+	  const  concept= document.querySelector("#subject").value
+	  const entry = document.querySelector("#textareaID").value
+	  const mood = document.querySelector("#moodButton").value
+	  
+	  const postObject = {
+		date: date,
+		concept: concept,
+		entry: entry,
+		mood:mood,
+		id:postId
+	  }
+	  
+	  updatePost(postObject)
+		.then(response => {
+		  showPostList();
+		})
+		clearJournalEntryArea();
+	}
+})
+

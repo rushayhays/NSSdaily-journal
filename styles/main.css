@@ -105,6 +105,7 @@ main {
     flex-direction: column;
     /* justify-content: space-between; */
     margin: 5px 0;
+    background-color:rgba(5, 5, 22, 0.753);
 }
 
 .journalButtons {
@@ -130,7 +131,7 @@ footer {
 
 
 input {
-    background: rgba(84, 174, 248, 0.747);;
+    background: rgba(84, 174, 248, 0.747);
 }
 
 
