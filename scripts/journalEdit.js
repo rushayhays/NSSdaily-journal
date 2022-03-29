@@ -39,9 +39,7 @@ export const JournalEditField = (postObj) => {
         <input type="text" id="subject" name="subject" value="${postObj.concept}">
     </div>
     <div class="textAreaBox">
-        <textarea id="textareaID" name="message" rows="10" cols="30" placeholder="My daring adventures in space. Space the final frontier...">
-            ${postObj.entry}
-        </textarea>
+        <textarea id="textareaID" name="message" rows="0" cols="0" placeholder="My daring adventures in space. Space the final frontier...">${postObj.entry}</textarea>
     </div>
 
 </div>

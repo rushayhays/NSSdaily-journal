@@ -8,9 +8,9 @@
   ],
   "posts": [
     {
-      "date": "2022-02-25",
+      "date": "2022-02-21",
       "concept": "HTML & CSS",
-      "entry": "                                                                        We talked about HTML components and how to make grid layouts with Flexbox in CSS. Yada Yada\n        \n        \n        \n        \n        \n        ",
+      "entry": "Today we worked on HTML and Flexbox, getting things to go where you want can be tricky.",
       "mood": "intrepid",
       "id": 1
     },
@@ -24,7 +24,7 @@
     {
       "date": "2022-03-01",
       "concept": "Fat Tuesday",
-      "entry": "            We made a mock-up Madrigras page with a countdown timer.\n        ",
+      "entry": "We made a mock-up Madrigras page with a countdown timer.",
       "mood": "intrepid",
       "id": 3
     },
@@ -38,44 +38,30 @@
     {
       "date": "2022-03-28",
       "concept": "Test",
-      "entry": "            The first Test  P.S. This wasn't really the first test, the first test failed                          \n        ",
+      "entry": "            The first Test  P.S. This wasn't really the first test, the first test failed",
       "mood": "intrepid",
       "id": 5
     },
     {
       "date": "2022-03-29",
       "concept": "Trial and Error",
-      "entry": "After some work, posts now show up immediately, I may also have stumbled upon time travel...\n                            ",
+      "entry": "After some work, posts now show up immediately, I may also have stumbled upon time travel...",
       "mood": "daring",
       "id": 6
     },
     {
       "date": "2022-03-07",
       "concept": "Double Check",
-      "entry": "Does it clear now?\n                            ",
+      "entry": "Does it clear now?",
       "mood": "daring",
       "id": 7
-    },
-    {
-      "date": "",
-      "concept": "",
-      "entry": "",
-      "mood": "",
-      "id": 8
-    },
-    {
-      "date": "",
-      "concept": "",
-      "entry": "",
-      "mood": "",
-      "id": 9
     },
     {
       "date": "2022-03-09",
       "concept": "tests",
       "entry": "How does it change",
       "mood": "",
-      "id": 10
+      "id": 8
     }
   ]
 }

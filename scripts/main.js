@@ -1,7 +1,11 @@
 import { EntryList } from "./journalEntryList.js";
-import { getLoggedInUser, getPosts, getSinglePost, updatePost } from "./data/dataManager.js";
+import { getLoggedInUser, getPosts, getSinglePost, updatePost, logoutUser, setLoggedInUser, loginUser } from "./data/dataManager.js";
 import { createPost, deletePost } from "./data/dataManager.js";
 import { JournalEditField } from "./journalEdit.js"
+import { JournalEntryBoxWriter } from "./journalEntryBox.js";
+import { header } from "./header/header.js"
+import { LoginForm } from "./auth/LoginForm.js"
+import { RegisterForm } from "./auth/RegisterForm.js"
 
 // EntryList();
 console.log(getLoggedInUser());
@@ -17,6 +21,8 @@ const showPostList = () => {
 
 
 const startDailyJournal = () => {
+	header();
+	JournalEntryBoxWriter();
 	showPostList();
 }
 
@@ -155,9 +161,72 @@ applicationElement.addEventListener("click", event => {
 	  
 	  updatePost(postObject)
 		.then(response => {
-		  showPostList();
+			startDailyJournal();
+
 		})
-		clearJournalEntryArea();
+	
 	}
 })
 
+//Now we build in the ability to register/login multiple users
+
+//first you need to be able to log out
+applicationElement.addEventListener("click", event => {
+	if (event.target.id === "logout") {
+	  logoutUser();
+	  console.log(getLoggedInUser());
+	  sessionStorage.clear();
+	  checkForUser();
+	}
+  })
+
+//If no one is logged in show the Login/Register Forms
+const showLoginRegister = () => {
+	header();
+	const entryElement = document.querySelector(".journalEntryBox");
+	//template strings can be used here too
+	entryElement.innerHTML = `${LoginForm()} <hr/> <hr/> ${RegisterForm()}`;
+	//make sure the post list is cleared out too
+const postElement = document.querySelector(".journalListBox");
+postElement.innerHTML = "";
+}
+
+//You need to know if a user is logged in
+const checkForUser = () => {
+	if (sessionStorage.getItem("user")){
+		setLoggedInUser(JSON.parse(sessionStorage.getItem("user")));
+		startDailyJournal();
+	}else {
+		 showLoginRegister();
+	}
+}
+
+//calling this here instead of startDailyJournal on line 27
+checkForUser();
+
+//Now that you can log out you need to be able to log in
+applicationElement.addEventListener("click", event => {
+	event.preventDefault();
+	if (event.target.id === "login__submit") {
+	  //collect all the details into an object
+	  const userObject = {
+		name: document.querySelector("input[name='name']").value,
+		email: document.querySelector("input[name='email']").value
+	  }
+	  loginUser(userObject)
+	  .then(dbUserObj => {
+		if(dbUserObj){
+		  sessionStorage.setItem("user", JSON.stringify(dbUserObj));
+		  startDailyJournal();
+		}else {
+		  //got a false value - no user
+		  const entryElement = document.querySelector(".sideGraphicBox");
+		  entryElement.innerHTML = `<p class="center">That user does not exist. Please try again or register for your free account.</p>;`
+		  //this resets the entry forms
+		  const entryElementRL = document.querySelector(".journalEntryBox");
+		  entryElementRL.innerHTML = `${LoginForm()} <hr/> <hr/> ${RegisterForm()}`;
+		
+		}
+	  })
+	}
+  })

@@ -22,10 +22,14 @@ header {
     /* background-color: lavender; */
 }
 
-.username {
-    /* background-color: lavender; */
+.userView {
+    display:flex;
     
 }
+.userView h2 {
+    margin-right: 30rem;
+}
+
 
 /*This is the next big box, it will affect journalBox and sideGraphicBox*/
 main {

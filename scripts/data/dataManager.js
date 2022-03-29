@@ -1,11 +1,17 @@
-const loggedInUser = {
-    id: 1,
-    name: "Rushay",
-    email: "rushayhays@email.com"
-}
+let loggedInUser = {}
 
 export const getLoggedInUser = () => {
     return loggedInUser;
+}
+
+//This lets you log out
+export const logoutUser = () => {
+    loggedInUser = {}
+}
+
+//This will set a user as the logged in user
+export const setLoggedInUser = (userObj) => {
+    loggedInUser = userObj;
 }
 
 
@@ -70,3 +76,21 @@ export const updatePost = postObj => {
         .then(response => response.json())
         
 }
+
+//This checks if the obj matches a user in the database, if it does then that user is set as the
+// logged in user
+export const loginUser = (userObj) => {
+    return fetch(`http://localhost:8088/users?name=${userObj.name}&email=${userObj.email}`)
+    .then(response => response.json())
+    .then(parsedUser => {
+      //is there a user?
+      console.log("parsedUser", parsedUser) //data is returned as an array
+      if (parsedUser.length > 0){
+        setLoggedInUser(parsedUser[0]);
+        return getLoggedInUser();
+      }else {
+        //no user
+        return false;
+      }
+    })
+  }
