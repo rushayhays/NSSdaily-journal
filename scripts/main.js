@@ -1,21 +1,32 @@
-import { EntryList } from "./journalEntryList.js";
-import { getLoggedInUser, getPosts, getSinglePost, updatePost, logoutUser, setLoggedInUser, loginUser } from "./data/dataManager.js";
+import { EntryList, userEntryList } from "./journalEntryList.js";
+import { getLoggedInUser, getPosts, getSinglePost, updatePost, logoutUser, setLoggedInUser, loginUser, registerUser } from "./data/dataManager.js";
 import { createPost, deletePost } from "./data/dataManager.js";
 import { JournalEditField } from "./journalEdit.js"
 import { JournalEntryBoxWriter } from "./journalEntryBox.js";
 import { header } from "./header/header.js"
 import { LoginForm } from "./auth/LoginForm.js"
 import { RegisterForm } from "./auth/RegisterForm.js"
+import { resetMain } from "./setMain.js"
 
-// EntryList();
-console.log(getLoggedInUser());
-console.log(getPosts());
+
+
 
 const showPostList = () => {
 	//Get a reference to the location on the DOM where the list will display
 	const postElement = document.querySelector(".entryList");
+	const archiveElement = document.querySelector(".sideGraphicBox")
+	let currentUser = JSON.parse(sessionStorage.getItem("user"))
+	
 	getPosts().then((allPosts) => {
-		postElement.innerHTML = EntryList(allPosts);
+		let userPosts= []
+		for(let post of allPosts){
+			if(post.userId === currentUser.id){
+				userPosts.push(post)
+			}
+
+		}
+		postElement.innerHTML = userEntryList(userPosts);
+		archiveElement.innerHTML = EntryList(allPosts);
 	})
 }
 
@@ -49,11 +60,14 @@ applicationElement.addEventListener("click", (event) => {
 	}
 })
 
+
+
 let journalEntryInProgress = {
 	date: "",
 	concept: "",
 	entry: "",
-	mood: ""
+	mood: "",
+	userId: 1
 };
 
 //This detects a change in date
@@ -104,6 +118,10 @@ const clearJournalEntryArea = () => {
 applicationElement.addEventListener("click", (event) => {
 	
 	if (event.target.id === "record"){
+		let user = JSON.parse(sessionStorage.getItem("user"))
+		console.log(user.name)
+		console.log(user.id)
+		journalEntryInProgress.userId = user.id;
 		createPost(journalEntryInProgress).then(showPostList)
 		clearJournalEntryArea()
 	}
@@ -217,6 +235,7 @@ applicationElement.addEventListener("click", event => {
 	  .then(dbUserObj => {
 		if(dbUserObj){
 		  sessionStorage.setItem("user", JSON.stringify(dbUserObj));
+		  resetMain();
 		  startDailyJournal();
 		}else {
 		  //got a false value - no user
@@ -229,4 +248,22 @@ applicationElement.addEventListener("click", event => {
 		}
 	  })
 	}
-  })
+})
+
+//This will allow a new user to register
+applicationElement.addEventListener("click", event => {
+	event.preventDefault();
+	if (event.target.id === "register__submit") {
+	  //collect all the details into an object
+	  const userObject = {
+		name: document.querySelector("input[name='registerName']").value,
+		email: document.querySelector("input[name='registerEmail']").value
+	  }
+	  registerUser(userObject)
+	  .then(dbUserObj => {
+		sessionStorage.setItem("user", JSON.stringify(dbUserObj));
+		resetMain();
+		startDailyJournal();
+	  })
+	}
+})

@@ -4,6 +4,16 @@
       "name": "Rushay",
       "email": "rushayhays@email.com",
       "id": 1
+    },
+    {
+      "name": "Brenda",
+      "email": "brenda@long.com",
+      "id": 2
+    },
+    {
+      "name": "Alex",
+      "email": "alex@levy.com",
+      "id": 3
     }
   ],
   "posts": [
@@ -12,6 +22,7 @@
       "concept": "HTML & CSS",
       "entry": "Today we worked on HTML and Flexbox, getting things to go where you want can be tricky.",
       "mood": "intrepid",
+      "userId": 1,
       "id": 1
     },
     {
@@ -19,13 +30,15 @@
       "date": "2022-02-28",
       "concept": "Objects to HTML",
       "entry": "More work on Martn's aquarium, turning objects into HTML elemnets.",
-      "mood": "Bold"
+      "mood": "Bold",
+      "userId": 1
     },
     {
       "date": "2022-03-01",
       "concept": "Fat Tuesday",
       "entry": "We made a mock-up Madrigras page with a countdown timer.",
       "mood": "intrepid",
+      "userId": 1,
       "id": 3
     },
     {
@@ -33,13 +46,15 @@
       "date": "2022-03-20",
       "concept": "APIs",
       "entry": "Today, we're figuring out how to disply API retrieved info to the DOM",
-      " mood": "Adventurous"
+      " mood": "Adventurous",
+      "userId": 1
     },
     {
       "date": "2022-03-28",
       "concept": "Test",
-      "entry": "            The first Test  P.S. This wasn't really the first test, the first test failed",
+      "entry": "The first Test  P.S. This wasn't really the first test, the first test failed",
       "mood": "intrepid",
+      "userId": 2,
       "id": 5
     },
     {
@@ -47,6 +62,7 @@
       "concept": "Trial and Error",
       "entry": "After some work, posts now show up immediately, I may also have stumbled upon time travel...",
       "mood": "daring",
+      "userId": 2,
       "id": 6
     },
     {
@@ -54,6 +70,7 @@
       "concept": "Double Check",
       "entry": "Does it clear now?",
       "mood": "daring",
+      "userId": 3,
       "id": 7
     },
     {
@@ -61,7 +78,16 @@
       "concept": "tests",
       "entry": "How does it change",
       "mood": "",
+      "userId": 3,
       "id": 8
+    },
+    {
+      "date": "2022-03-30",
+      "concept": "Testing the Features",
+      "entry": "Now we see if this will post as the user or not",
+      "mood": "bold",
+      "userId": 3,
+      "id": 9
     }
   ]
 }
